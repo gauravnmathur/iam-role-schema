@@ -1,0 +1,56 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "IAM",
+    "description": "Autonomic.ai IAM role schema",
+    "type": "object",
+
+    "definitions": {
+        "aui": { "type": "string" },
+        "role_statement": {
+            "$id": "#role_statement",
+            "type": "object",
+            "properties": {
+                "name": { "type": "string" },
+                "object_type": {
+                    "type": "string"
+                },
+                "allowed_types": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "file:schema-role-allowed_types.json#/definitions/allowed_types"
+                    }
+                },
+                "actions": {
+                    "type": "array", 
+                    "items": { 
+                        "$ref": "file:schema-role-actions.json#/definitions/actions"
+                    }
+                },
+                "allowed_fields": {
+                    "type": "object"
+                }
+            },
+
+            "required": ["name", "object_type", "allowed_types", "actions", "allowed_fields"],
+            "additionalProperties": false
+        }
+    },
+
+    "properties": {
+        "name": { "description": "Name of the role", "type": "string" },
+        "language_version": { "type": "string", "pattern": "^v[0-9]+$" },
+        "enforce_unique": { "type": "boolean" },
+        "statements": { 
+            "type": "array", 
+            "items": { 
+                "$ref": "file:schema-iam-role.json#/definitions/role_statement" 
+            }, 
+            "default": [] 
+        }
+    },
+
+    "required": ["name", "language_version"],
+
+    "additionalProperties": false
+        
+}

@@ -1,0 +1,19 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+
+    "definitions": {
+        "allowed_types": {
+            "type": "string",
+            "enum": [
+                "lock",
+                "*",
+                "aui:iam:role/deployment-manager",
+                "aui:iam:role/feed-admin",
+                "aui:iam:role/feed-reader",
+                "unlock",
+                "startIgnition",
+                "stopIgnition",
+                "aui:iam:role/vehicle-owner"]
+        }
+    }
+}

@@ -1,0 +1,1 @@
+["lock", "*", "aui:iam:role/deployment-manager", "aui:iam:role/feed-admin", "aui:iam:role/feed-reader", "unlock", "startIgnition", "stopIgnition", "aui:iam:role/vehicle-owner"]

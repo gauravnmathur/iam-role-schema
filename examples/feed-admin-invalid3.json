@@ -1,0 +1,84 @@
+{
+  "name": "feed-admin",
+  "language_version": "v2",
+  "statements": [
+    {
+      "name": "flow-actions",
+      "object_type": "aui:flow:feed",
+      "actions": [
+        "feed:createFlow",
+        "feed:listFlows"
+      ],
+      "allowed_fields": { "*": ["*"]},
+      "allowed_types": ["*"]
+    },
+    {
+      "name": "delete-flow-actions",
+      "object_type": "aui:flow:feed/*",
+      "actions": [
+        "feed:deleteFlow"
+      ],
+      "allowed_fields": { "*": ["*"]},
+      "allowed_types": ["*"]
+    },
+    {
+      "name": "tap-flow-actions",
+      "object_type": "aui:flow:feed/*",
+      "actions": [
+        "feed:createTapFromFlow",
+        "feed:listTapsToFlow"
+      ],
+      "allowed_fields": { "*": ["*"]},
+      "allowed_types": ["*"]
+    },
+    {
+      "name": "tap-actions",
+      "object_type": "aui:tap:feed/*",
+      "actions": [
+        "feed:editTap",
+        "feed:getTap"
+      ],
+      "allowed_fields": { "*": ["*"]},
+      "allowed_types": ["*"]
+    },
+    {
+      "name": "delete-tap-actions",
+      "object_type": "aui:tap:feed/*",
+      "actions": [
+        "feed:deleteTap"
+      ],
+      "allowed_fields": { "*": ["*"]},
+      "allowed_types": [
+          "this-type-is-invalid"
+      ]
+    },
+    {
+      "name": "flow-permission-actions",
+      "object_type": "aui:flow:feed/*",
+      "actions": [
+        "iam:createPermission",
+        "iam:deletePermission",
+        "iam:listPermissions"
+      ],
+      "allowed_fields": { "*": ["*"]},
+      "allowed_types": [
+        "aui:iam:role/feed-reader",
+        "aui:iam:role/feed-admin"
+      ]
+    },
+    {
+      "name": "tap-permission-actions",
+      "object_type": "aui:tap:feed/*",
+      "actions": [
+        "iam:createPermission",
+        "iam:deletePermission",
+        "iam:listPermissions"
+      ],
+      "allowed_fields": { "*": ["*"]},
+      "allowed_types": [
+        "aui:iam:role/feed-reader",
+        "aui:iam:role/feed-admin"
+      ]
+    }
+  ]
+}
